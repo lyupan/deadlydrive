@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta author="Lyu Pan">
+	<title>Deadly Drive</title>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script type="text/javascript" src="game.js"></script>
+</head>
+<body>
+
+	<div class="container">
+	<div style="display: none">
+		<img id="car" src="car.png">
+		<img id="tree1" src="tree1.png">
+		<img id="rock" src="rock.png">
+		<img id="coin" src="coin.png">
+		<audio id="bgm"  loop="loop">
+		  <source src="bgm.mp3" type="audio/mpeg">
+		</audio>
+	</div>
+
+  	<!-- The Modal -->
+	<div id="scoreModal" class="modal">
+	  <!-- Modal content -->
+	  <div class="modal-content">
+		<h2>GAME OVER</h2>
+		<h3>Your miles this time : <span id="mileSpan"></span></h3>
+		<h3>Your coins this time : <span id="coinSpan"></span></h3>
+		<h3>Totoal score this time: <span id="scoreSpan"></span></h3>
+		<button id="confirmBtn" type="button" class="btn btn-md">Confirm</button>
+	  </div>
+	</div>
+
+  	<!-- The Modal -->
+	<div id="tipsModal" class="modal">
+	  <!-- Modal content -->
+	  <div class="modal-content">
+		<strong><p>Move your car to steal coins from the devils and try not be killed by them.</p>
+		<p>Your score will be the miles you travelled plus 100 times the coins you collected.</p></strong>
+		<button id="tipsBtn" type="button" class="btn btn-md">Confirm</button>
+	  </div>
+	</div>
+
+		<div class="scorePanel">
+			<p>Miles: <span id="yourMile"></span>
+				&nbsp Coins: <span id="coins"></span>
+				<button type="button" class="btn" id="startBtn">START</button>
+				<button type="button" class="btn" id="showTipsBtn">Tips</button>
+				<span id="mode">Choose your mode: </span>
+			</p>
+
+			<p>Max Score: <span id="maxScore"></span>
+				&nbsp Total Coins: <span id="totalCoins"></span>
+				<label class="radio-inline"><input type="radio" name="level" value="hard">Hard</label>
+				<label class="radio-inline"><input type="radio" name="level" value="middle">Middle</label>
+				<label class="radio-inline"><input type="radio" name="level" value="easy" checked="true">Easy</label>
+			</p>
+		</div>
+
+		<div class="canvas">
+			<canvas width="448px" height="570px"></canvas>
+		</div>
+	</div>
+</body>
+</html>
